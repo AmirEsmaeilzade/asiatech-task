@@ -1,9 +1,10 @@
 import { useDebounce } from '../../../hooks'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import SuggestionsBar from './SuggestionsBar'
 import { Get } from '../../../utils/api'
 import { SuggestionType } from '../../../utils/types'
+import SuggestionsBar from './suggestionsBar'
+
 
 interface OptionalMiddleName {
   defaultValue?: string
