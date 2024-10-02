@@ -1,8 +1,12 @@
 export const normalSearchParam = (param: string) => {
-  const searchQuery = param.replace('https://duckduckgo.com/', '')
+  let searchQuery = param.replace('https://duckduckgo.com/', '')
   const startQuery = searchQuery.indexOf("?")
-  const justParam = searchQuery.substring(0,startQuery)
-  const newParam = startQuery?justParam:searchQuery
-  const NormalSearchQuery = newParam?.replace(/_/g, ' ')
+
+  if(startQuery>0){
+    searchQuery= searchQuery.substring(0,startQuery)
+  }
+
+  const NormalSearchQuery = searchQuery?.replace(/_/g, ' ')
+
   return encodeURIComponent(NormalSearchQuery)
 }
